@@ -1,6 +1,5 @@
-import type { NextPage } from 'next'
-import { useEffect } from 'react';
 import { GetStaticProps } from 'next'
+import { ReactNode } from 'react';
 import { api } from '../services/api';
 
 /* // SPA
@@ -42,21 +41,23 @@ import { api } from '../services/api';
 
       // }
 
-type HomeProps ={
-  episodes: Array<{
-    id: string
-    title: string
-    members: string
-    published_at: string
-    thumbnail: string
-    description: string
-  }> 
+type Episode = {
+  id: string;
+  title: string;
+  members: string;
+  published_at: string;
+  otherProp?: any
+}
+
+type HomeProps = {
+  episodes: Episode[];
 }
 
 export default function Home(props: HomeProps){
   return (
     <div>
       <p>Indesx</p>
+      <p>{new Date(props.episodes[0].published_at)}</p>
     </div>
   );
 }

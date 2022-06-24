@@ -1,20 +1,58 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es6",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es5",
+      "es6"
+    ],
+    "baseUrl": ".", // setting a value for baseUrl is required
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "~/*": [
+        "*"
+      ]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "declaration": true,
+    "downlevelIteration": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".vscode",
+    "out"
+  ],
+  "include": [
+    "**/styles/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.yml",
+    "**/*.yaml",
+    "**/*.css",
+    "**/*.scss",
+    "**/*",
+    ".d.ts",
+    "next-env.d.ts",
+  ]
 }
