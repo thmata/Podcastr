@@ -46,18 +46,17 @@ type Episode = {
   title: string;
   members: string;
   published_at: string;
-  otherProp?: any
 }
 
 type HomeProps = {
   episodes: Episode[];
 }
 
-export default function Home(props: HomeProps){
+export default function Home(props : HomeProps){
   return (
     <div>
       <p>Indesx</p>
-      <p>{new Date(props.episodes[0].published_at)}</p>
+      <p>{new Date(props.episodes[0].published_at).toLocaleDateString}</p>
     </div>
   );
 }
